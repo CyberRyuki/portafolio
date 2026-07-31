@@ -5,18 +5,18 @@ import Nav from '../components/Nav.astro';
 const servicios = [
   { code: "01", title: "Análisis y gestión de vulnerabilidades", desc: "Escaneo de activos, validación de post-parchado y gestión del ciclo de parches para reducir tu superficie de ataque de forma continua." },
   { code: "02", title: "Respuesta a incidentes", desc: "Análisis de malware, threat hunting y contención de incidentes con informes claros de hallazgos y remediación. Experiencia a nivel nacional (SOC)." },
-  { code: "04", title: "Hardening de infraestructura", desc: "Fortalecimiento de endpoints, Windows Server y Active Directory: GPO, políticas de grupo y guías de hardening con las mejores prácticas." },
-  { code: "05", title: "Gestión de accesos e identidades", desc: "Matrices de roles y privilegios, control de acceso y automatización de usuarios (LDAP, Azure AD) según las funciones reales del personal." },
-  { code: "06", title: "Seguridad en cloud (Azure /AWS /Huawei)", desc: "Administración de permisos, sincronización de identidades con Azure AD y aseguramiento de entornos Microsoft 365 y AWS." },
+  { code: "04", title: "Hardening de infraestructura", desc: "Fortalecimiento de endpoints, windows server y active directory: gpo, políticas de grupo y guías de hardening con las mejores prácticas." },
+  { code: "05", title: "Gestión de accesos e identidades", desc: "Matrices de roles y privilegios, control de acceso y automatización de usuarios (LDAP, azure ad) según las funciones reales del personal." },
+  { code: "06", title: "Seguridad en cloud (Azure)", desc: "Administración de permisos, sincronización de identidades con azure ad y aseguramiento de entornos Microsoft 365." },
 ];
 
 const proyectos = [
-  { tag: "Herramienta · Python", title: "Crawler de DarkWeb por keywords", desc: "Herramienta en Python que rastrea dominios de la DarkWeb usando palabras clave, con arquitectura modular.", link: "#" },
-  { tag: "GRC · ISO 27001", title: "Manual de SGSI", desc: "Sistema de Gestión de Seguridad de la Información adaptado a las necesidades de la organización, base para el cumplimiento normativo.", link: "#" },
+  { tag: "Herramienta · Python", title: "Crawler de DarkWeb por keywords", desc: "Herramienta en python que rastrea dominios de la darkWeb usando palabras clave, con arquitectura modular.", link: "#" },
+  { tag: "GRC · ISO 27001", title: "Manual de SGSI", desc: "Sistema de gestión de seguridad de la información adaptado a las necesidades de la organización, base para el cumplimiento normativo.", link: "#" },
   { tag: "Gestión de vulnerabilidades", title: "Plataforma de gestión de vulnerabilidades y parches", desc: "Despliegue de agentes, automatización de instalación vía scripting, configuración de SSO y plantillas de reportes para mejorar la postura de seguridad.", link: "#" },
   { tag: "IAM · Gobierno de accesos", title: "Matriz de roles y privilegios", desc: "Levantamiento de accesos por función, definiendo una matriz de roles para el personal y sus herramientas.", link: "#" },
   { tag: "ITSM · GLPI", title: "Implementación y administración de GLPI", desc: "Diseñé e implementé la plataforma GLPI desde cero, realizando la instalación y configuración de servidores, integración del servicio de correo para notificaciones, creación de plantillas de solicitudes, configuración de entidades, perfiles, reglas de negocio y personalización de flujos de trabajo para la mesa de ayuda.", link: "#"},
-  { tag: "Microsoft · Identity", title: "Migración e integración a Microsoft Entra ID", desc: "Integré Active Directory con Microsoft Entra ID mediante Microsoft Entra Connect, configurando sincronización de usuarios y grupos, Password Hash Synchronization, Immutable ID, UPN, filtrado de OU, resolución de conflictos de identidad y validación de la sincronización para Microsoft 365.", link: "#"},
+  { tag: "Microsoft · Identity", title: "Migración e integración a Microsoft Entra ID", desc: "Integré active directory con microsoft entra id mediante microsoft entra connect, configurando sincronización de usuarios y grupos, password hash synchronization, immutable id, upn, filtrado de ou, resolución de conflictos de identidad y validación de la sincronización para microsoft 365.", link: "#"},
 ];
 
 const certs = ["Ing. en Ciberseguridad (UNICARIBE)", "Ténologo en Seguridad Informática (ITLA)", "ISO 27001/27002 — AENOR", "Cisco CyberOps Associate", "BootCamp "];
@@ -29,14 +29,14 @@ const stack = ["Active Directory", "Windows Server", "GPO", "Azure AD", "Microso
 
   <header class="hero">
     <div class="wrap">
-      <p class="eyebrow">Profesional en Ciberseguridad · GRC & Infraestructura</p>
+      <p class="eyebrow">Profesional en Ciberseguridad · Infraestructura</p>
       <h1 class="hero-title">
         Protejo lo que<br />
         <span class="accent">sostiene tu operación.</span>
       </h1>
       <p class="hero-sub">
         Especialista en seguridad defensiva: gestión de vulnerabilidades, respuesta a incidentes,
-        Gestión de accesos, y hardening de infraestructura. Ayudo a organizaciones a reducir riesgo y
+        gestión de accesos, y hardening de infraestructura. Ayudo a organizaciones a reducir riesgo y
         madurar su postura de seguridad.
       </p>
       <div class="hero-cta">
@@ -93,12 +93,12 @@ const stack = ["Active Directory", "Windows Server", "GPO", "Azure AD", "Microso
         <h2 class="section-title">Quién está detrás</h2>
         <p>
           Soy Ryuki Sasaki, profesional en ciberseguridad con experiencia en entornos
-          Azure, análisis de vulnerabilidades, gestión de accesos, respuesta a incidentes y
+          azure, análisis de vulnerabilidades, gestión de accesos, respuesta a incidentes y
           definición de políticas de seguridad.
         </p>
         <p>
-          He trabajado en SOC, empresas privadas, y en el sector público dominicano. Sólidos conocimientos en Windows
-          Server, GPO y Linux, orientado a proteger infraestructuras, mitigar riesgos y madurar la postura de seguridad
+          He trabajado en SOC, empresas privadas, y en el sector público dominicano. Sólidos conocimientos en windows
+          server, gpo y linux, orientado a proteger infraestructuras, mitigar riesgos y madurar la postura de seguridad
           de forma continua.
         </p>
       </div>
