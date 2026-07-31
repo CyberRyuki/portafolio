@@ -1,0 +1,228 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+
+const servicios = [
+  { code: "01", title: "Pentesting", desc: "Pruebas de intrusión sobre aplicaciones web, redes e infraestructura para encontrar fallos antes que un atacante." },
+  { code: "02", title: "Auditorías de seguridad", desc: "Revisión de configuración, cumplimiento y superficie de ataque con informe accionable y priorizado por riesgo." },
+  { code: "03", title: "Hardening", desc: "Fortalecimiento de servidores, endpoints y redes: cierre de puertos, políticas, cifrado y buenas prácticas." },
+  { code: "04", title: "Respuesta a incidentes", desc: "Contención, análisis forense básico y recuperación cuando algo ya salió mal." },
+  { code: "05", title: "Concienciación", desc: "Formación al equipo en phishing, contraseñas y hábitos seguros. El eslabón humano importa." },
+  { code: "06", title: "Consultoría", desc: "Acompañamiento técnico para pymes que necesitan criterio de seguridad sin tener un CISO en plantilla." },
+];
+
+const proyectos = [
+  { tag: "CTF / Lab", title: "Writeup: escalada de privilegios en Linux", desc: "Explotación paso a paso de un binario SUID mal configurado. Documentado con capturas y remediación.", link: "#" },
+  { tag: "Herramienta", title: "Escáner de headers de seguridad", desc: "Script en Python que audita headers HTTP y genera un reporte de riesgo. Open source.", link: "#" },
+  { tag: "Caso (anonimizado)", title: "Auditoría a e-commerce", desc: "Reduje 14 vulnerabilidades críticas/altas en una tienda online del sector retail en 3 semanas.", link: "#" },
+  { tag: "Investigación", title: "Análisis de campaña de phishing", desc: "Desglose de una campaña real dirigida a pymes locales, IOCs y recomendaciones de defensa.", link: "#" },
+];
+
+const certs = ["CompTIA Security+", "eJPT", "OSCP (en curso)", "TryHackMe Top 3%"];
+const stack = ["Kali Linux", "Burp Suite", "Nmap", "Metasploit", "Wireshark", "Python", "Bash", "OWASP ZAP", "Docker", "Linux hardening"];
+---
+
+<Layout title="tu_alias — Ciberseguridad & Tecnología">
+  <span id="top"></span>
+  <Nav />
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Consultor independiente · Ciberseguridad</p>
+      <h1 class="hero-title">
+        Encuentro las grietas<br />
+        <span class="accent">antes que ellos.</span>
+      </h1>
+      <p class="hero-sub">
+        Ayudo a empresas y pymes a proteger su infraestructura, sus datos y su reputación
+        mediante pruebas de intrusión, auditorías y fortalecimiento de sistemas.
+      </p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn btn-solid">Trabajemos juntos</a>
+        <a href="#proyectos" class="btn btn-ghost">Ver proyectos</a>
+      </div>
+      <div class="terminal mono" aria-hidden="true">
+        <span class="t-line"><span class="t-prompt">$</span> nmap -sV target.local</span>
+        <span class="t-line dim">Starting scan… 3 services detected</span>
+        <span class="t-line"><span class="t-prompt">$</span> ./audit --report</span>
+        <span class="t-line ok">✓ Informe generado · 0 falsos positivos</span>
+      </div>
+    </div>
+  </header>
+
+  <section id="servicios" class="section">
+    <div class="wrap">
+      <p class="eyebrow">Qué hago</p>
+      <h2 class="section-title">Servicios</h2>
+      <div class="grid">
+        {servicios.map((s) => (
+          <article class="card">
+            <span class="card-code mono">{s.code}</span>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="proyectos" class="section alt">
+    <div class="wrap">
+      <p class="eyebrow">Trabajo real</p>
+      <h2 class="section-title">Proyectos & writeups</h2>
+      <p class="section-lead">Labs, herramientas propias y casos anonimizados. Reemplaza estos con los tuyos.</p>
+      <div class="proj-grid">
+        {proyectos.map((p) => (
+          <a href={p.link} class="proj">
+            <span class="proj-tag mono">{p.tag}</span>
+            <h3>{p.title}</h3>
+            <p>{p.desc}</p>
+            <span class="proj-arrow mono">Leer →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="section">
+    <div class="wrap sobre">
+      <div class="sobre-text">
+        <p class="eyebrow">Sobre mí</p>
+        <h2 class="section-title">Quién está detrás</h2>
+        <p>
+          Soy [Tu Nombre], profesional independiente de ciberseguridad y tecnología. Combino
+          pruebas ofensivas con criterio defensivo para dar a mis clientes algo simple: tranquilidad.
+        </p>
+        <p>
+          Escribe aquí tu historia, tu enfoque y por qué alguien debería confiarte su seguridad.
+          Sé concreto y humano.
+        </p>
+      </div>
+      <div class="sobre-side">
+        <div class="panel">
+          <h4 class="panel-title mono">// certificaciones</h4>
+          <ul class="taglist">
+            {certs.map((c) => <li>{c}</li>)}
+          </ul>
+        </div>
+        <div class="panel">
+          <h4 class="panel-title mono">// stack</h4>
+          <div class="chips">
+            {stack.map((t) => <span class="chip mono">{t}</span>)}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section alt">
+    <div class="wrap contacto">
+      <p class="eyebrow">Siguiente paso</p>
+      <h2 class="section-title">¿Hablamos?</h2>
+      <p class="section-lead">Cuéntame qué necesitas proteger. Respondo en menos de 24&nbsp;horas.</p>
+      <div class="contacto-links">
+        <a href="mailto:tucorreo@ejemplo.com" class="clink">
+          <span class="clink-label mono">Email</span>
+          <span class="clink-val">tucorreo@ejemplo.com</span>
+        </a>
+        <a href="https://www.linkedin.com/in/ryuki-sasaki/" class="clink">
+          <span class="clink-label mono">LinkedIn</span>
+          <span class="clink-val">Ryuki Sasaki</span>
+        </a>
+        <a href="https://github.com/CyberRyuki" class="clink">
+          <span class="clink-label mono">GitHub</span>
+          <span class="clink-val">CyberRyuki</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span class="mono">© 2026 tu_alias</span>
+      <span class="mono dim">Construido con Astro · Asegurado con intención</span>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .hero { padding: 6rem 0 4rem; position: relative; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 20% 0%, rgba(201, 162, 39, 0.10), transparent 70%);
+    pointer-events: none;
+  }
+  .hero-title { font-size: clamp(2.6rem, 7vw, 4.8rem); margin: 1.2rem 0; position: relative; }
+  .accent { color: var(--brass); }
+  .hero-sub { font-size: 1.15rem; color: var(--paper-dim); max-width: 34rem; }
+  .hero-cta { display: flex; gap: 1rem; margin: 2rem 0 3rem; flex-wrap: wrap; }
+  .btn { padding: 0.8rem 1.5rem; border-radius: 2px; font-weight: 500; font-size: 0.95rem; transition: all 0.2s; display: inline-block; }
+  .btn-solid { background: var(--brass); color: var(--ink); }
+  .btn-solid:hover { background: var(--brass-soft); transform: translateY(-2px); }
+  .btn-ghost { border: 1px solid var(--ink-3); color: var(--paper); }
+  .btn-ghost:hover { border-color: var(--brass); color: var(--brass); }
+
+  .terminal {
+    background: var(--ink-2); border: 1px solid var(--line); border-radius: 6px;
+    padding: 1.25rem 1.4rem; max-width: 30rem; font-size: 0.85rem;
+    display: flex; flex-direction: column; gap: 0.5rem;
+    box-shadow: 0 20px 50px -20px rgba(0,0,0,0.6);
+  }
+  .t-line { color: var(--paper); }
+  .t-prompt { color: var(--brass); margin-right: 0.5rem; }
+  .t-line.dim { color: var(--paper-dim); }
+  .t-line.ok { color: var(--teal); }
+
+  .section { padding: 5rem 0; }
+  .section.alt { background: var(--ink-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0.5rem 0 0.5rem; }
+  .section-lead { color: var(--paper-dim); max-width: 36rem; margin-bottom: 2.5rem; }
+
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
+  .card { background: var(--ink-2); border: 1px solid var(--line); border-radius: 6px; padding: 1.75rem; transition: all 0.25s; }
+  .section.alt .card { background: var(--ink); }
+  .card:hover { border-color: var(--ink-3); transform: translateY(-3px); }
+  .card-code { color: var(--brass); font-size: 0.8rem; }
+  .card h3 { font-size: 1.2rem; margin: 0.75rem 0 0.5rem; }
+  .card p { color: var(--paper-dim); font-size: 0.95rem; }
+
+  .proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .proj { background: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 1.75rem; display: block; transition: all 0.25s; position: relative; }
+  .proj:hover { border-color: var(--brass); transform: translateY(-3px); }
+  .proj-tag { color: var(--teal); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .proj h3 { font-size: 1.25rem; margin: 0.6rem 0 0.5rem; }
+  .proj p { color: var(--paper-dim); font-size: 0.95rem; margin-bottom: 1rem; }
+  .proj-arrow { color: var(--brass); font-size: 0.85rem; }
+
+  .sobre { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start; }
+  .sobre-text p { color: var(--paper-dim); margin-top: 1rem; }
+  .sobre-side { display: flex; flex-direction: column; gap: 1rem; }
+  .panel { background: var(--ink-2); border: 1px solid var(--line); border-radius: 6px; padding: 1.5rem; }
+  .panel-title { color: var(--brass); font-size: 0.8rem; margin-bottom: 1rem; }
+  .taglist { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .taglist li { color: var(--paper); font-size: 0.95rem; padding-left: 1rem; position: relative; }
+  .taglist li::before { content: "▹"; color: var(--brass); position: absolute; left: 0; }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .chip { background: var(--ink); border: 1px solid var(--line); border-radius: 3px; padding: 0.35rem 0.7rem; font-size: 0.78rem; color: var(--paper-dim); }
+
+  .contacto-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
+  .clink { background: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.4rem; transition: all 0.2s; }
+  .clink:hover { border-color: var(--brass); transform: translateY(-3px); }
+  .clink-label { color: var(--brass); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .clink-val { color: var(--paper); font-size: 1.05rem; }
+
+  .footer { padding: 2.5rem 0; border-top: 1px solid var(--line); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; color: var(--paper-dim); flex-wrap: wrap; gap: 0.5rem; }
+  .dim { color: var(--paper-dim); opacity: 0.6; }
+
+  @media (max-width: 860px) {
+    .grid { grid-template-columns: 1fr 1fr; }
+    .proj-grid { grid-template-columns: 1fr; }
+    .sobre { grid-template-columns: 1fr; }
+    .contacto-links { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .grid { grid-template-columns: 1fr; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>

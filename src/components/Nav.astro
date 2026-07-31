@@ -1,0 +1,40 @@
+---
+---
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand mono">&gt;_ tu_alias<span class="cursor">█</span></a>
+    <div class="links">
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#sobre">Sobre mí</a>
+      <a href="#contacto" class="pill">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(13, 27, 42, 0.82);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { font-size: 0.95rem; font-weight: 600; color: var(--paper); }
+  .cursor { color: var(--brass); animation: blink 1.1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .links { display: flex; align-items: center; gap: 1.75rem; }
+  .links a { font-size: 0.9rem; color: var(--paper-dim); transition: color 0.2s; }
+  .links a:hover { color: var(--paper); }
+  .pill {
+    border: 1px solid var(--brass);
+    color: var(--brass) !important;
+    padding: 0.4rem 0.9rem;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .pill:hover { background: var(--brass); color: var(--ink) !important; }
+  @media (max-width: 640px) {
+    .links a:not(.pill) { display: none; }
+  }
+</style>
