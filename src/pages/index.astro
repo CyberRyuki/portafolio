@@ -3,49 +3,50 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 
 const servicios = [
-  { code: "01", title: "Pentesting", desc: "Pruebas de intrusión sobre aplicaciones web, redes e infraestructura para encontrar fallos antes que un atacante." },
-  { code: "02", title: "Auditorías de seguridad", desc: "Revisión de configuración, cumplimiento y superficie de ataque con informe accionable y priorizado por riesgo." },
-  { code: "03", title: "Hardening", desc: "Fortalecimiento de servidores, endpoints y redes: cierre de puertos, políticas, cifrado y buenas prácticas." },
-  { code: "04", title: "Respuesta a incidentes", desc: "Contención, análisis forense básico y recuperación cuando algo ya salió mal." },
-  { code: "05", title: "Concienciación", desc: "Formación al equipo en phishing, contraseñas y hábitos seguros. El eslabón humano importa." },
-  { code: "06", title: "Consultoría", desc: "Acompañamiento técnico para pymes que necesitan criterio de seguridad sin tener un CISO en plantilla." },
+  { code: "01", title: "Análisis y gestión de vulnerabilidades", desc: "Escaneo de activos, validación de post-parchado y gestión del ciclo de parches para reducir tu superficie de ataque de forma continua." },
+  { code: "02", title: "Respuesta a incidentes", desc: "Análisis de malware, threat hunting y contención de incidentes con informes claros de hallazgos y remediación. Experiencia a nivel nacional (CSIRT)." },
+  { code: "03", title: "Implementación de SGSI / ISO 27001", desc: "Diseño de manuales, políticas y procedimientos de seguridad de la información adaptados a tu organización, alineados con ISO 27001:2022." },
+  { code: "04", title: "Hardening de infraestructura", desc: "Fortalecimiento de endpoints, Windows Server y Active Directory: GPO, políticas de grupo y guías de hardening con las mejores prácticas." },
+  { code: "05", title: "Gestión de accesos e identidades", desc: "Matrices de roles y privilegios, control de acceso y automatización de usuarios (LDAP, Azure AD) según las funciones reales del personal." },
+  { code: "06", title: "Seguridad en cloud (Azure / AWS)", desc: "Administración de permisos, sincronización de identidades con Azure AD y aseguramiento de entornos Microsoft 365 y AWS." },
 ];
 
 const proyectos = [
-  { tag: "CTF / Lab", title: "Writeup: escalada de privilegios en Linux", desc: "Explotación paso a paso de un binario SUID mal configurado. Documentado con capturas y remediación.", link: "#" },
-  { tag: "Herramienta", title: "Escáner de headers de seguridad", desc: "Script en Python que audita headers HTTP y genera un reporte de riesgo. Open source.", link: "#" },
-  { tag: "Caso (anonimizado)", title: "Auditoría a e-commerce", desc: "Reduje 14 vulnerabilidades críticas/altas en una tienda online del sector retail en 3 semanas.", link: "#" },
-  { tag: "Investigación", title: "Análisis de campaña de phishing", desc: "Desglose de una campaña real dirigida a pymes locales, IOCs y recomendaciones de defensa.", link: "#" },
+  { tag: "Herramienta · Python", title: "Crawler de DarkWeb por keywords", desc: "Herramienta en Python que rastrea dominios de la DarkWeb usando palabras clave, con arquitectura modular. Desarrollada de cero en 株式会社 ARS (Japón).", link: "#" },
+  { tag: "GRC · ISO 27001", title: "Manual de SGSI para laboratorio clínico", desc: "Sistema de Gestión de Seguridad de la Información adaptado a las necesidades de la organización, base para el cumplimiento normativo.", link: "#" },
+  { tag: "Gestión de vulnerabilidades", title: "Plataforma de gestión de vulnerabilidades y parches", desc: "Despliegue de agentes, automatización de instalación vía scripting, configuración de SSO y plantillas de reportes para mejorar la postura de seguridad.", link: "#" },
+  { tag: "IAM · Gobierno de accesos", title: "Matriz de roles y privilegios", desc: "Levantamiento de accesos por función junto a Gestión Humana, definiendo una matriz de roles para el personal y sus herramientas.", link: "#" },
 ];
 
-const certs = ["CompTIA Security+", "eJPT", "OSCP (en curso)", "TryHackMe Top 3%"];
-const stack = ["Kali Linux", "Burp Suite", "Nmap", "Metasploit", "Wireshark", "Python", "Bash", "OWASP ZAP", "Docker", "Linux hardening"];
+const certs = ["Ing. en Ciberseguridad (UNICARIBE)", "ISO 27001/27002 — AENOR", "Cisco CyberOps Associate", "BootCamp U. de León (España)"];
+const stack = ["Active Directory", "Windows Server", "GPO", "Azure AD", "AWS", "Microsoft 365", "FortiAnalyzer", "Linux", "PowerShell", "Bash", "Python", "ISO 27001"];
 ---
 
-<Layout title="tu_alias — Ciberseguridad & Tecnología">
+<Layout title="Ryuki Sasaki — Ciberseguridad & Infraestructura">
   <span id="top"></span>
   <Nav />
 
   <header class="hero">
     <div class="wrap">
-      <p class="eyebrow">Consultor independiente · Ciberseguridad</p>
+      <p class="eyebrow">Profesional en Ciberseguridad · GRC & Infraestructura</p>
       <h1 class="hero-title">
-        Encuentro las grietas<br />
-        <span class="accent">antes que ellos.</span>
+        Protejo lo que<br />
+        <span class="accent">sostiene tu operación.</span>
       </h1>
       <p class="hero-sub">
-        Ayudo a empresas y pymes a proteger su infraestructura, sus datos y su reputación
-        mediante pruebas de intrusión, auditorías y fortalecimiento de sistemas.
+        Especialista en seguridad defensiva: gestión de vulnerabilidades, respuesta a incidentes,
+        ISO 27001 y hardening de infraestructura. Ayudo a organizaciones a reducir riesgo y
+        madurar su postura de seguridad.
       </p>
       <div class="hero-cta">
         <a href="#contacto" class="btn btn-solid">Trabajemos juntos</a>
         <a href="#proyectos" class="btn btn-ghost">Ver proyectos</a>
       </div>
       <div class="terminal mono" aria-hidden="true">
-        <span class="t-line"><span class="t-prompt">$</span> nmap -sV target.local</span>
-        <span class="t-line dim">Starting scan… 3 services detected</span>
-        <span class="t-line"><span class="t-prompt">$</span> ./audit --report</span>
-        <span class="t-line ok">✓ Informe generado · 0 falsos positivos</span>
+        <span class="t-line"><span class="t-prompt">$</span> vuln-scan --validate-patches</span>
+        <span class="t-line dim">Analizando activos… postura evaluada</span>
+        <span class="t-line"><span class="t-prompt">$</span> ./sgsi --report iso27001</span>
+        <span class="t-line ok">✓ Informe generado · riesgos priorizados</span>
       </div>
     </div>
   </header>
@@ -69,15 +70,15 @@ const stack = ["Kali Linux", "Burp Suite", "Nmap", "Metasploit", "Wireshark", "P
   <section id="proyectos" class="section alt">
     <div class="wrap">
       <p class="eyebrow">Trabajo real</p>
-      <h2 class="section-title">Proyectos & writeups</h2>
-      <p class="section-lead">Labs, herramientas propias y casos anonimizados. Reemplaza estos con los tuyos.</p>
+      <h2 class="section-title">Proyectos</h2>
+      <p class="section-lead">Proyectos reales de mi trayectoria en ciberseguridad, GRC e infraestructura.</p>
       <div class="proj-grid">
         {proyectos.map((p) => (
           <a href={p.link} class="proj">
             <span class="proj-tag mono">{p.tag}</span>
             <h3>{p.title}</h3>
             <p>{p.desc}</p>
-            <span class="proj-arrow mono">Leer →</span>
+            <span class="proj-arrow mono">Ver detalle →</span>
           </a>
         ))}
       </div>
@@ -90,17 +91,20 @@ const stack = ["Kali Linux", "Burp Suite", "Nmap", "Metasploit", "Wireshark", "P
         <p class="eyebrow">Sobre mí</p>
         <h2 class="section-title">Quién está detrás</h2>
         <p>
-          Soy [Tu Nombre], profesional independiente de ciberseguridad y tecnología. Combino
-          pruebas ofensivas con criterio defensivo para dar a mis clientes algo simple: tranquilidad.
+          Soy Ryuki Sasaki Ledesma, profesional en ciberseguridad con experiencia en entornos
+          Azure, análisis de vulnerabilidades, gestión de accesos, respuesta a incidentes y
+          definición de políticas de seguridad.
         </p>
         <p>
-          Escribe aquí tu historia, tu enfoque y por qué alguien debería confiarte su seguridad.
-          Sé concreto y humano.
+          He trabajado en el Centro Nacional de Ciberseguridad (CSIRT-RD), laboratorios clínicos,
+          el sector público dominicano y un proyecto en Japón. Sólidos conocimientos en Windows
+          Server, GPO y Linux, orientado a proteger infraestructuras, mitigar riesgos y madurar
+          la postura de seguridad de forma continua.
         </p>
       </div>
       <div class="sobre-side">
         <div class="panel">
-          <h4 class="panel-title mono">// certificaciones</h4>
+          <h4 class="panel-title mono">// formación & certs</h4>
           <ul class="taglist">
             {certs.map((c) => <li>{c}</li>)}
           </ul>
@@ -121,17 +125,17 @@ const stack = ["Kali Linux", "Burp Suite", "Nmap", "Metasploit", "Wireshark", "P
       <h2 class="section-title">¿Hablamos?</h2>
       <p class="section-lead">Cuéntame qué necesitas proteger. Respondo en menos de 24&nbsp;horas.</p>
       <div class="contacto-links">
-        <a href="mailto:tucorreo@ejemplo.com" class="clink">
+        <a href="mailto:ryuki_sasaki@hotmail.es" class="clink">
           <span class="clink-label mono">Email</span>
-          <span class="clink-val">tucorreo@ejemplo.com</span>
+          <span class="clink-val">ryuki_sasaki@hotmail.es</span>
         </a>
-        <a href="https://www.linkedin.com/in/ryuki-sasaki/" class="clink">
+        <a href="https://www.linkedin.com/in/ryuki-sasaki-ledesma" class="clink">
           <span class="clink-label mono">LinkedIn</span>
-          <span class="clink-val">Ryuki Sasaki</span>
+          <span class="clink-val">Ryuki Sasaki Ledesma</span>
         </a>
-        <a href="https://github.com/CyberRyuki" class="clink">
+        <a href="https://github.com/tu-usuario" class="clink">
           <span class="clink-label mono">GitHub</span>
-          <span class="clink-val">CyberRyuki</span>
+          <span class="clink-val">/tu-usuario</span>
         </a>
       </div>
     </div>
@@ -139,7 +143,7 @@ const stack = ["Kali Linux", "Burp Suite", "Nmap", "Metasploit", "Wireshark", "P
 
   <footer class="footer">
     <div class="wrap footer-inner">
-      <span class="mono">© 2026 tu_alias</span>
+      <span class="mono">© 2026 Ryuki Sasaki Ledesma</span>
       <span class="mono dim">Construido con Astro · Asegurado con intención</span>
     </div>
   </footer>
